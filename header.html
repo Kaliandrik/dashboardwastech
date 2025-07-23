@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASTECH</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">
+      <img src="img/logowastech.jpeg" alt="WASTECH Logo">
+    </div>
+    <div class="contact-info">
+      <span><i class="fas fa-phone"></i> (88) 93423-4323</span>
+      <span><i class="fas fa-envelope"></i> wastech@gmail.com</span>
+      <span><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</span>
+    </div>
+    <div class="top-icons">
+      <span><i class="fas fa-bell"></i> Notificações</span>
+      <span><i class="fas fa-shopping-cart"></i> Carrinho</span>
+      <div class="profile-container">
+        <div class="profile">
+          <img src="img/leonardowastech.jpg" alt="Usuário">
+          <span>Leonardo <i class="fas fa-chevron-down dropdown-icon"></i></span>
+        </div>
+        <div class="dropdown-menu">
+          <a href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+          <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Ajuda</a>
+          <div class="divider"></div>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="menu-bar">
+    <a href="#"><i class="fas fa-home"></i> Início</a>
+    <a href="#"><i class="fas fa-star"></i> Recursos</a>
+    <a href="#"><i class="fas fa-seedling"></i> Plantas</a>
+    <a href="#"><i class="fas fa-calendar-alt"></i> Calendário</a>
+    <a href="#"><i class="fas fa-shopping-basket"></i> Loja</a>
+    <a href="#"><i class="fas fa-headset"></i> Suporte</a>
+    <a href="#"><i class="fas fa-book"></i> Guias</a>
+    <a href="#"><i class="fas fa-exclamation-circle"></i> Sobre</a>
+    <input type="text" placeholder="Pesquisar..." class="search-box">
+  </nav>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const profile = document.querySelector('.profile');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const dropdownIcon = document.querySelector('.dropdown-icon');
+
+  profile.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle('show');
+    dropdownIcon.classList.toggle('rotate');
+  });
+
+  // Fechar o menu quando clicar em qualquer lugar fora
+  document.addEventListener('click', function() {
+    dropdownMenu.classList.remove('show');
+    dropdownIcon.classList.remove('rotate');
+  });
+
+  // Evitar que o menu feche quando clicar nele
+  dropdownMenu.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+});
+  </script>
+</body>
+</html>
